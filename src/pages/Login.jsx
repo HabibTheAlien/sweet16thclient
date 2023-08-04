@@ -1,5 +1,9 @@
 import { ToastContainer, toast } from "react-toastify";
 import { useContext } from "react";
+import Google from "../assets/google.png";
+import Facebook from "../assets/fb.png";
+import GitHub from "../assets/github.png";
+
 import { Context } from "../contextApi/context";
 import "react-toastify/dist/ReactToastify.css";
 import styled from "styled-components";
@@ -21,7 +25,6 @@ const Container = styled.div`
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	/* ${mobile({ width: "90%", height: "70%", border: "none" })} */
 `;
 
 const Wrapper = styled.div`
@@ -34,7 +37,6 @@ const Wrapper = styled.div`
 const Header = styled.h1`
 	text-align: center;
 	font-size: 40px;
-	margin-top: 60px;
 `;
 
 const Form = styled.form`
@@ -97,6 +99,7 @@ const P = styled.p`
 	color: gray;
 	font-size: 14px;
 	margin-top: 5px;
+	margin-bottom: 10px;
 `;
 
 const Show = styled.span`
@@ -115,6 +118,23 @@ const Div = styled.div`
 		border: 2px solid #703be7;
 		transition: all 0.01s linear;
 	}
+`;
+const Social = styled.div`
+	display: flex;
+	width: 65%;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid gray;
+	padding: 7px 0;
+	cursor: pointer;
+	border-radius: 4px;
+	margin-top: 7px;
+`;
+const SocialBtn = styled.button`
+	background: none;
+	border: none;
+	margin-left: 10px;
+	cursor: pointer;
 `;
 const Login = () => {
 	const [passShow, setPassShow] = useState(false);
@@ -183,6 +203,18 @@ const Login = () => {
 						<Log> Register Now</Log>
 					</Link>
 				</P>
+				<Social onClick={() => console.log("Hello from  Google")}>
+					<img style={{ width: "26px" }} src={Google} alt="" />
+					<SocialBtn> Login with Google</SocialBtn>
+				</Social>
+				<Social onClick={() => console.log("Hello from  Facebook")}>
+					<img style={{ width: "26px" }} src={Facebook} alt="" />
+					<SocialBtn> Login with Facebook</SocialBtn>
+				</Social>
+				<Social onClick={() => console.log("Hello from GitHub")}>
+					<img style={{ width: "26px" }} src={GitHub} alt="" />
+					<SocialBtn> Login with GitHub</SocialBtn>
+				</Social>
 			</Wrapper>
 		</Container>
 	);
