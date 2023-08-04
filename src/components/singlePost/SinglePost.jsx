@@ -1,0 +1,77 @@
+import axios from "axios";
+import { format } from "timeago.js";
+import postImg from "../../assets/postImage.jpeg";
+import { useContext, useEffect, useState } from "react";
+import { useLocation } from "react-router";
+import { Link } from "react-router-dom";
+import { Context } from "../../contextApi/context";
+import "./singlePost.css";
+import { baseURL } from "../../App";
+
+export default function SinglePost() {
+	const location = useLocation();
+	const path = location.pathname.split("/")[2];
+	const [post, setPost] = useState({});
+	const { user } = useContext(Context);
+
+	useEffect(() => {
+		const getPost = async () => {
+			const res = await axios.get(`${baseURL}/posts/${path}`);
+			setPost(res.data);
+		};
+		getPost();
+	}, [path]);
+
+	console.log(post);
+
+	// const handlePostDelete = async () => {
+	// 	console.log(" object delete");
+	// 	try {
+	// 		await axios.delete(`/posts/${post._id}`, {
+	// 			data: { userId: user._id },
+	// 		});
+	// 		window.location.replace("/");
+	// 	} catch (err) {}
+	// };
+
+	let Img = postImg;
+	if (post.photo) {
+		Img = post.photo;
+	} else {
+		Img = postImg;
+	}
+
+	return (
+		<>
+			<div className="singlePost">
+				<div className="singlePostWrapper">
+					<img src={Img} alt="" className="singlePostImg" />
+
+					<h1 className="singlePostTitle">
+						{post.title}
+						{post.userId === user._id && (
+							<div className="singlePostEdit">
+								<Link to={`/postedit/${post._id}`}>
+									<i className="far fa-edit" />
+								</Link>
+								<i
+									className="singlePostIcon far fa-trash-alt"
+									// onClick={handlePostDelete}
+								/>
+							</div>
+						)}
+					</h1>
+					<div className="singlePostInfo">
+						<span className="singlePostAuthor">
+							Author : <b> {post.username}</b>
+						</span>
+						<span className="singlePostDate">
+							{format(post.createdAt)}
+						</span>
+					</div>
+					<p className="singlePostDesc">{post.desc}</p>
+				</div>
+			</div>
+		</>
+	);
+}

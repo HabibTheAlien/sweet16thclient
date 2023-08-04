@@ -1,0 +1,100 @@
+.singleUser {
+	width: 100%;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+}
+.singleUserWrapper {
+	width: 100%;
+	padding: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.singleUserHeader {
+	text-align: center;
+	font-size: 25px;
+}
+
+.singleUserTop {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: cente;
+	border-bottom: 1px solid silver;
+	padding: 10px 0px;
+}
+
+.singleUserImg img {
+	height: 110px;
+	width: 110px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+.singleUserDetails {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	margin-left: 20px;
+}
+
+.singleUserDetails p {
+	font-weight: bold;
+	font-size: 22px;
+}
+
+.singleUserDetails span {
+	color: rgb(177, 173, 173);
+	font-size: 14px;
+	margin: 5px 0px;
+	font-style: italic;
+}
+.singleUserDetails button {
+	margin: 7px 0px;
+	cursor: pointer;
+	padding: 10px;
+	font-size: 15px;
+	width: 150px;
+	border: none;
+	border-radius: 7px;
+	background: #d6d6d6;
+	font-weight: bold;
+}
+
+.singleUserBottom {
+	width: 100%;
+}
+.singleUserBottomStatus,
+.singleUserBottomSettings {
+	border-bottom: 1px solid silver;
+	padding: 10px;
+	width: 100%;
+	font-size: 18px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.singleUserBottomSettings {
+	cursor: pointer;
+}
+.singleUserBottomStatus span {
+	color: white;
+	background: #1dbf73;
+	padding: 7px;
+	border-radius: 3px;
+	width: 60px;
+	text-align: center;
+	font-size: 16px;
+}
+
+.singleUserBottomSettings {
+	padding: 15px;
+	cursor: pointer;
+}
