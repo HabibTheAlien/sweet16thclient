@@ -49,15 +49,13 @@ export default function SinglePost() {
 
 					<h1 className="singlePostTitle">
 						{post.title}
-						{post.userId === user._id && (
+
+						{user && post.userId === user._id && (
 							<div className="singlePostEdit">
 								<Link to={`/postedit/${post._id}`}>
 									<i className="far fa-edit" />
 								</Link>
-								<i
-									className="singlePostIcon far fa-trash-alt"
-									// onClick={handlePostDelete}
-								/>
+								<i className="singlePostIcon far fa-trash-alt" />
 							</div>
 						)}
 					</h1>

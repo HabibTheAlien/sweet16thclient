@@ -123,19 +123,19 @@ const Social = styled.div`
 	display: flex;
 	width: 65%;
 	align-items: center;
-	justify-content: center;
-	border: 1px solid gray;
+	justify-content: space-evenly;
 	padding: 7px 0;
+	border: 1px solid rgb(192, 186, 186);
 	cursor: pointer;
 	border-radius: 4px;
 	margin-top: 7px;
+	font-size: 14px;
 `;
-const SocialBtn = styled.button`
-	background: none;
-	border: none;
-	margin-left: 10px;
-	cursor: pointer;
+
+const Image = styled.img`
+	width: 25px;
 `;
+
 const Login = () => {
 	const [passShow, setPassShow] = useState(false);
 	const [email, setEmail] = useState("");
@@ -158,6 +158,10 @@ const Login = () => {
 			toast.error("Something went wrong try again,,,");
 		}
 	};
+	const handleGoogleLogin = () => {
+		// window.open("http://localhost:8800/api/auth/google", ");
+	};
+
 	return (
 		<Container>
 			<Header>Login</Header>
@@ -203,17 +207,17 @@ const Login = () => {
 						<Log> Register Now</Log>
 					</Link>
 				</P>
-				<Social onClick={() => console.log("Hello from  Google")}>
-					<img style={{ width: "26px" }} src={Google} alt="" />
-					<SocialBtn> Login with Google</SocialBtn>
+				<Social onClick={handleGoogleLogin}>
+					<Image style={{ width: "26px" }} src={Google} alt="" />
+					Login with Google
 				</Social>
 				<Social onClick={() => console.log("Hello from  Facebook")}>
-					<img style={{ width: "26px" }} src={Facebook} alt="" />
-					<SocialBtn> Login with Facebook</SocialBtn>
+					<Image style={{ width: "26px" }} src={Facebook} alt="" />
+					Login with Facebook
 				</Social>
 				<Social onClick={() => console.log("Hello from GitHub")}>
-					<img style={{ width: "26px" }} src={GitHub} alt="" />
-					<SocialBtn> Login with GitHub</SocialBtn>
+					<Image style={{ width: "26px" }} src={GitHub} alt="" />
+					Login with GitHub
 				</Social>
 			</Wrapper>
 		</Container>

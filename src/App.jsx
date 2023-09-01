@@ -15,8 +15,8 @@ import PostEdit from "./pages/postEdit/PostEdit.jsx";
 import Friends from "./pages/Friends.jsx";
 import Home from "./pages/Home.jsx";
 
-export const baseURL = "https://sweet16thserver.onrender.com/api";
-// export const baseURL = "http://localhost:8800/api";
+// export const baseURL = "https://sweet16thserver.onrender.com/api";
+export const baseURL = "http://localhost:8800/api";
 
 const App = () => {
 	const { user } = useContext(Context);
