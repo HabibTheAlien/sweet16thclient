@@ -18,6 +18,7 @@ const PostEdit = () => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [isFetching, setIsFetching] = useState(false);
 	const { user } = useContext(Context);
+	console.log(post);
 
 	useEffect(() => {
 		const getPost = async () => {
