@@ -38,7 +38,7 @@ export default function Write() {
 		}
 	}, [file]);
 
-	console.log(picURL);
+	// console.log(picURL);
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		setIsFetching(true);

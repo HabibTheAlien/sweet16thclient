@@ -10,7 +10,8 @@ import "./postEdit.css";
 const PostEdit = () => {
 	const location = useLocation();
 	const path = location.pathname.split("/")[2];
-	const [post, setPost] = useState(JSON.parse(localStorage.getItem("post")));
+	const post = JSON.parse(localStorage.getItem("post"));
+	// const [post, setPost] = useState(JSON.parse(localStorage.getItem("post")));
 	const [title, setTitle] = useState(post ? post.title : " ");
 	const [desc, setDesc] = useState(post ? post.desc : " ");
 	const [file, setFile] = useState(null);
@@ -18,7 +19,7 @@ const PostEdit = () => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [isFetching, setIsFetching] = useState(false);
 	const { user } = useContext(Context);
-	console.log(post);
+	// console.log(post);
 
 	useEffect(() => {
 		const getPost = async () => {
