@@ -1,5 +1,5 @@
 import "./post.css";
-import { format } from "timeago.js";
+// import { format } from "timeago.js";
 import { Link } from "react-router-dom";
 import postImg from "../../assets/postImage.jpeg";
 
@@ -17,7 +17,9 @@ export default function Post({ item }) {
 				<div className="postInfo">
 					<span className="postTitle">{item.title}</span>
 					<hr />
-					<span className="postDate">{format(item.createdAt)}</span>
+					<span className="postDate">
+						{new Date(item.createdAt).toDateString()}
+					</span>
 				</div>
 				<p className="postDesc">{item.desc}</p>
 			</Link>

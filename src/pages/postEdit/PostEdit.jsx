@@ -2,7 +2,6 @@ import { useContext, useEffect, useState } from "react";
 import { useLocation } from "react-router";
 import postImg from "../../assets/postImage.jpeg";
 import { Context } from "../../contextApi/context";
-
 import { baseURL } from "../../App";
 import axios from "axios";
 import "./postEdit.css";

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { format } from "timeago.js";
+// import { format } from "timeago.js";
 import postImg from "../../assets/postImage.jpeg";
 import { useContext, useEffect, useState } from "react";
 import { useLocation } from "react-router";
@@ -22,7 +22,7 @@ export default function SinglePost() {
 		getPost();
 	}, [path]);
 
-	console.log(post);
+	// console.log();
 
 	// const handlePostDelete = async () => {
 	// 	console.log(" object delete");
@@ -64,7 +64,7 @@ export default function SinglePost() {
 							Author : <b> {post.username}</b>
 						</span>
 						<span className="singlePostDate">
-							{format(post.createdAt)}
+							{new Date(post.createdAt).toDateString()}
 						</span>
 					</div>
 					<p className="singlePostDesc">{post.desc}</p>
