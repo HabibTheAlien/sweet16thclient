@@ -9,8 +9,7 @@ import "./postEdit.css";
 const PostEdit = () => {
 	const location = useLocation();
 	const path = location.pathname.split("/")[2];
-	const post = JSON.parse(localStorage.getItem("post"));
-	// const [post, setPost] = useState(JSON.parse(localStorage.getItem("post")));
+	var post = JSON.parse(localStorage.getItem("post"));
 	const [title, setTitle] = useState(post ? post.title : " ");
 	const [desc, setDesc] = useState(post ? post.desc : " ");
 	const [file, setFile] = useState(null);
@@ -18,17 +17,14 @@ const PostEdit = () => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [isFetching, setIsFetching] = useState(false);
 	const { user } = useContext(Context);
-	// console.log(post);
 
 	useEffect(() => {
 		const getPost = async () => {
 			const res = await axios.get(`${baseURL}/posts/${path}`);
 			localStorage.setItem("post", JSON.stringify(res.data));
-			// setPost();
-			console.log(res.data);
 		};
 		getPost();
-	}, [path]);
+	}, []);
 
 	useEffect(() => {
 		if (file) {
@@ -68,8 +64,6 @@ const PostEdit = () => {
 				`${baseURL}/posts/${path}`,
 				updatedPost
 			);
-
-			console.log(res.data);
 			setIsFetching(false);
 			localStorage.removeItem("post");
 			res && window.location.replace(`/post/${path}`);

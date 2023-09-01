@@ -47,20 +47,40 @@ const Btn = styled.button`
 	border: none;
 	border-radius: 5px;
 `;
-const DeletePopup = ({ setDel }) => {
+const DeletePopup = ({ setDel, text, id }) => {
 	const { user } = useContext(Context);
 
-	const hendleDelete = async (e) => {
-		e.preventDefault();
-
-		try {
-			const res = await axios.delete(`${baseURL}/users/${user._id}`, {
-				headers: { token: `Bearer ${user.accessToken}` },
-			});
-			res && localStorage.setItem("user", null);
-			res && window.location.replace("/");
-		} catch {
-			toast.error("Something went wrong,,,");
+	const hendleDelete = async (text) => {
+		// e.preventDefault();
+		if (text === "account") {
+			const accountDelete = async () => {
+				console.log("User Deleted");
+				try {
+					const res = await axios.delete(
+						`${baseURL}/users/${user._id}`,
+						{
+							headers: { token: `Bearer ${user.accessToken}` },
+						}
+					);
+					res && localStorage.setItem("user", null);
+					res && window.location.replace("/");
+				} catch {
+					toast.error("Something went wrong,,,");
+				}
+			};
+			accountDelete();
+		} else if (text === "post") {
+			const postDelete = async () => {
+				try {
+					const res = await axios.delete(`${baseURL}/posts/${id}`, {
+						data: { userId: user._id },
+					});
+					res && window.location.replace("/");
+				} catch (error) {
+					toast.error("Something went wrong,,,");
+				}
+			};
+			postDelete();
 		}
 	};
 	return (
@@ -70,11 +90,9 @@ const DeletePopup = ({ setDel }) => {
 			<Container />
 			<Wrapper>
 				<Header>Delete your account?</Header>
-				<Text>
-					Once you have delete your account it can't be undone
-				</Text>
+				<Text>Once you have delete your {text} it can't be undone</Text>
 				<Btn onClick={() => setDel(false)}>Cancel</Btn>
-				<Btn dele onClick={hendleDelete}>
+				<Btn dele onClick={() => hendleDelete(text)}>
 					Delete
 				</Btn>
 			</Wrapper>

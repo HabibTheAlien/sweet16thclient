@@ -6,6 +6,7 @@ import DeletePopup from "../../components/DeletePopup";
 const Settings = () => {
 	const { dispatch } = useContext(Context);
 	const [del, setDel] = useState(false);
+
 	const handleLogout = () => {
 		dispatch({ type: "LOGOUT" });
 		window.location.replace("/");
@@ -13,7 +14,7 @@ const Settings = () => {
 
 	return (
 		<>
-			{del && <DeletePopup setDel={setDel} />}
+			{del && <DeletePopup setDel={setDel} text="account" />}
 			<div className="settings">
 				<div className="settingsLogout" onClick={handleLogout}>
 					Log out
