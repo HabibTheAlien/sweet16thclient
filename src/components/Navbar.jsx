@@ -69,16 +69,21 @@ const Items = styled.span`
 	}
 
 	@media only screen and (max-width: 600px) {
-		font-size: 1rem;
+		font-size: 0.9rem;
+		padding: 5px 5px;
 	}
 	@media only screen and (min-width: 600px) {
-		font-size: 1.1rem;
+		font-size: 1rem;
+		padding: 5px 6px;
 	}
+
 	@media only screen and (min-width: 768px) {
-		font-size: 1.2rem;
+		font-size: 1.1rem;
+		padding: 5px 7px;
 	}
 	@media only screen and (min-width: 1200px) {
-		font-size: 1.3rem;
+		font-size: 1.2rem;
+		padding: 5px 9px;
 	}
 `;
 const Btn = styled.button`
