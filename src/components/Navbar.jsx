@@ -23,8 +23,20 @@ const Left = styled.div`
 	cursor: pointer;
 `;
 const Logo = styled.h1`
-	font-size: 1.2rem;
+	/* font-size:; */
 	color: #703be7;
+	@media only screen and (max-width: 600px) {
+		font-size: 1.3rem;
+	}
+	@media only screen and (min-width: 600px) {
+		font-size: 1.6rem;
+	}
+	@media only screen and (min-width: 768px) {
+		font-size: 1.8rem;
+	}
+	@media only screen and (min-width: 1200px) {
+		font-size: 2rem;
+	}
 `;
 const Center = styled.div`
 	display: flex;
@@ -52,9 +64,21 @@ const Items = styled.span`
 	padding: 5px 10px;
 	color: #1d1d1d;
 	font-size: 15px;
-	${mobile({ padding: "5px" })}
 	&:hover {
 		color: blue;
+	}
+
+	@media only screen and (max-width: 600px) {
+		font-size: 1rem;
+	}
+	@media only screen and (min-width: 600px) {
+		font-size: 1.1rem;
+	}
+	@media only screen and (min-width: 768px) {
+		font-size: 1.2rem;
+	}
+	@media only screen and (min-width: 1200px) {
+		font-size: 1.3rem;
 	}
 `;
 const Btn = styled.button`

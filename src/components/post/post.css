@@ -1,12 +1,26 @@
 .post {
-	width: 45%;
+	width: 20%;
 	margin: 5px;
-	height: 25%;
+
+	@media only screen and (max-width: 600px) {
+		width: 90%;
+	}
+	@media only screen and (min-width: 600px) {
+		width: 45%;
+		margin: 0 8px;
+	}
+	@media only screen and (min-width: 768px) {
+		width: 30%;
+		margin: 0 10px;
+	}
+	@media only screen and (min-width: 1200px) {
+		width: 20%;
+		margin: 0 15px;
+	}
 }
 
 .postImg {
 	width: 100%;
-	height: 100%;
 	object-fit: cover;
 	border-radius: 7px;
 }
@@ -33,6 +47,18 @@
 	font-weight: 600;
 	margin-top: 10px;
 	cursor: pointer;
+	@media only screen and (max-width: 600px) {
+		font-size: 1.3rem;
+	}
+	@media only screen and (min-width: 600px) {
+		font-size: 1.4rem;
+	}
+	@media only screen and (min-width: 768px) {
+		font-size: 1.4rem;
+	}
+	@media only screen and (min-width: 1200px) {
+		font-size: 1.5rem;
+	}
 }
 
 .postDate {
@@ -54,4 +80,16 @@
 	-webkit-box-orient: vertical;
 	padding: 7px;
 	text-align: center;
+	@media only screen and (max-width: 600px) {
+		font-size: 1rem;
+	}
+	@media only screen and (min-width: 600px) {
+		font-size: 1.1rem;
+	}
+	@media only screen and (min-width: 768px) {
+		font-size: 1.1rem;
+	}
+	@media only screen and (min-width: 1200px) {
+		font-size: 1.1rem;
+	}
 }
