@@ -1,5 +1,6 @@
-import Navbar from "./components/Navbar.jsx";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar.jsx";
+import Footer from "./components/Footer.jsx";
 import PageNotFound from "./pages/PageNotFound.jsx";
 import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
@@ -51,6 +52,7 @@ const App = () => {
 					<Route path="/settings" element={<Settings />} />
 					<Route path="*" element={<PageNotFound />} />
 				</Routes>
+				<Footer />
 			</BrowserRouter>
 		</>
 	);

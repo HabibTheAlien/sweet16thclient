@@ -32,7 +32,7 @@ export default function SinglePost({ data }) {
 
 	return (
 		<>
-			{del && <DeletePopup setDel={setDel} text="post" id={post._id} />}
+			{del && <DeletePopup setDel={setDel} text="post" postId={post._id} />}
 			<div className="singlePost">
 				<div className="singlePostWrapper">
 					<img src={Img} alt="" className="singlePostImg" />

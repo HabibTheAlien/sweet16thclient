@@ -1,21 +1,22 @@
 .post {
 	width: 20%;
 	margin: 5px;
+	/* margin-top: 15px; */
 
 	@media only screen and (max-width: 600px) {
 		width: 90%;
 	}
 	@media only screen and (min-width: 600px) {
 		width: 45%;
-		margin: 0 8px;
+		margin: 8px;
 	}
 	@media only screen and (min-width: 768px) {
 		width: 30%;
-		margin: 0 10px;
+		margin: 10px;
 	}
 	@media only screen and (min-width: 1200px) {
 		width: 20%;
-		margin: 0 15px;
+		margin: 15px;
 	}
 }
 
@@ -46,6 +47,7 @@
 	font-size: 1rem;
 	font-weight: 600;
 	margin-top: 10px;
+	text-align: center;
 	cursor: pointer;
 	@media only screen and (max-width: 600px) {
 		font-size: 1.3rem;
@@ -70,16 +72,16 @@
 
 .postDesc {
 	font-family: "Varela Round", sans-serif;
-	font-size: 14px;
+	/* font-size: 16px; */
 	color: #444;
-	line-height: 20px;
+	line-height: 29px;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	display: -webkit-box;
 	-webkit-line-clamp: 3;
 	-webkit-box-orient: vertical;
 	padding: 7px;
-	text-align: center;
+	text-align: justify;
 	@media only screen and (max-width: 600px) {
 		font-size: 1rem;
 	}

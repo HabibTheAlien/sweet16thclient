@@ -9,6 +9,7 @@ const Container = styled.div`
 	flex-wrap: wrap;
 	justify-content: center;
 	margin-top: 15px;
+	margin-bottom: 60px;
 `;
 
 export default function Home() {

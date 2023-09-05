@@ -47,7 +47,7 @@ const Btn = styled.button`
 	border: none;
 	border-radius: 5px;
 `;
-const DeletePopup = ({ setDel, text, id }) => {
+const DeletePopup = ({ setDel, text, postId }) => {
 	const { user } = useContext(Context);
 
 	const hendleDelete = async (text) => {
@@ -72,7 +72,7 @@ const DeletePopup = ({ setDel, text, id }) => {
 		} else if (text === "post") {
 			const postDelete = async () => {
 				try {
-					const res = await axios.delete(`${baseURL}/posts/${id}`, {
+					const res = await axios.delete(`${baseURL}/posts/${postId}`, {
 						data: { userId: user._id },
 					});
 					res && window.location.replace("/");
