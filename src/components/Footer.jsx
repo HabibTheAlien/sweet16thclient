@@ -3,13 +3,11 @@ import styled from "styled-components";
 import { FaFacebook, FaGithub, FaTwitter } from "react-icons/fa";
 
 const FooterWrapper = styled.footer`
-	height: 70px;
+	height: 45px;
 	width: 100%;
-	/* position: absolute; */
-	bottom: 0;
-	left: 0;
-	padding: 15px 0;
-	text-align: center;
+	padding: 10px 70px;
+	display: flex;
+	justify-content: space-between;
 	border-top: 1px solid gray;
 `;
 
@@ -19,13 +17,10 @@ const Copyright = styled.p`
 `;
 
 const SocialLinks = styled.div`
-	margin-top: 15px;
 	display: flex;
-	justify-content: center;
 
 	a {
 		color: #3c3c3c;
-
 		text-decoration: none;
 		margin: 0 10px;
 		font-size: 24px;
