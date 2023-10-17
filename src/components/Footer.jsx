@@ -22,7 +22,7 @@ const SocialLinks = styled.div`
 	a {
 		color: #3c3c3c;
 		text-decoration: none;
-		margin: 0 10px;
+		margin: 0 5px;
 		font-size: 24px;
 
 		&:hover {
