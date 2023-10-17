@@ -5,7 +5,7 @@ import { FaFacebook, FaGithub, FaTwitter } from "react-icons/fa";
 const FooterWrapper = styled.footer`
 	height: 45px;
 	width: 100%;
-	padding: 10px 70px;
+	padding: 10px 50px;
 	display: flex;
 	justify-content: space-between;
 	border-top: 1px solid gray;
