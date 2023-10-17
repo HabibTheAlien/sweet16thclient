@@ -8,6 +8,7 @@ import { useContext } from "react";
 const Container = styled.div`
 	z-index: 1000;
 	height: 70px;
+	width:100vw;
 	background: white;
 	border-bottom: 1px solid silver;
 	display: flex;

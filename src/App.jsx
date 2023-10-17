@@ -28,7 +28,9 @@ const App = () => {
 			
 		<BrowserRouter  >
 			<Navbar />
-			<Routes>
+			<div className="middle">
+
+			<Routes >
 				<Route path="/" element={<Home />} />
 				<Route path="/friends" element={<Friends />} />
 				<Route
@@ -54,6 +56,8 @@ const App = () => {
 				<Route path="/settings" element={<Settings />} />
 				<Route path="*" element={<PageNotFound />} />
 			</Routes>
+			</div>
+
 			<Footer />
 		</BrowserRouter>
 			</div>
