@@ -3,9 +3,9 @@
 	padding: 20px;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	height: 100%;
+	/* align-items: center; */
+	/* justify-content: center; */
+	height: calc(100vh - 115px);
 }
 .profilePageWrapper {
 	width: 100%;
