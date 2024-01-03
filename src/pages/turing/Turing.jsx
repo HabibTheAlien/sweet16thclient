@@ -5,7 +5,6 @@ function Turing() {
   const [originalData, setOriginalData] = useState("");
   const [encryptionKey, setEncryptionKey] = useState("");
   const [encryptedData, setEncryptedData] = useState("");
-  const [decryptedData, setDecryptedData] = useState("");
 
   const encryptData = () => {
     let encryptedResult = "";
@@ -16,17 +15,6 @@ function Turing() {
       encryptedResult += String.fromCharCode(charCode);
     }
     setEncryptedData(encryptedResult);
-  };
-
-  const decryptData = () => {
-    let decryptedResult = "";
-    for (let i = 0; i < encryptedData.length; i++) {
-      const charCode =
-        encryptedData.charCodeAt(i) ^
-        encryptionKey.charCodeAt(i % encryptionKey.length);
-      decryptedResult += String.fromCharCode(charCode);
-    }
-    setDecryptedData(decryptedResult);
   };
 
   return (
@@ -50,17 +38,10 @@ function Turing() {
       <button className="btn" onClick={encryptData}>
         Submit
       </button>
-      {/* <button onClick={decryptData}>Decrypt</button> */}
       {encryptedData && (
         <div className="output">
           <strong>Output:</strong>
           <p>{encryptedData}</p>
-        </div>
-      )}
-      {decryptedData && (
-        <div>
-          <strong>Decrypted Data:</strong>
-          <p>{decryptedData}</p>
         </div>
       )}
     </div>
