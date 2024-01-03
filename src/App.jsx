@@ -15,53 +15,51 @@ import SinglePost from "./components/singlePost/SinglePost.jsx";
 import PostEdit from "./pages/postEdit/PostEdit.jsx";
 import Friends from "./pages/Friends.jsx";
 import Home from "./pages/Home.jsx";
-
+import Turing from "./pages/turing/Turing.jsx";
 
 export const baseURL = "https://sweet16thserver.onrender.com/api";
 // export const baseURL = "http://localhost:8800/api";
-// 
 const App = () => {
-	const { user } = useContext(Context);
+  const { user } = useContext(Context);
 
-	return (
-		<div className="container">
-			
-		<BrowserRouter  >
-			<Navbar />
-			<div className="middle">
+  return (
+    <div className="container">
+      <BrowserRouter>
+        <Navbar />
+        <div className="middle">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/friends" element={<Friends />} />
+            <Route
+              path="/login"
+              element={user ? <Navigate to="/" /> : <Login />}
+            />
+            <Route
+              path="/register"
+              element={user ? <Navigate to="/" /> : <Register />}
+            />
+            <Route path="/single/:id" element={<SingleUser />} />
+            <Route path="/profile" element={<ProfilePage />} />
+            <Route
+              path="/write"
+              element={user ? <Write /> : <Navigate to="/login" />}
+            />
+            <Route path="/post/:postId" element={<SinglePost />} />
+            <Route path="/edit" element={<ProfilePageEdit />} />
+            <Route
+              path="/postedit/:postId"
+              element={user ? <PostEdit /> : <Navigate to="/" />}
+            />
+            <Route path="/settings" element={<Settings />} />
+            <Route path="/turing" element={<Turing />} />
+            <Route path="*" element={<PageNotFound />} />
+          </Routes>
+        </div>
 
-			<Routes >
-				<Route path="/" element={<Home />} />
-				<Route path="/friends" element={<Friends />} />
-				<Route
-					path="/login"
-					element={user ? <Navigate to="/" /> : <Login />}
-				/>
-				<Route
-					path="/register"
-					element={user ? <Navigate to="/" /> : <Register />}
-				/>
-				<Route path="/single/:id" element={<SingleUser />} />
-				<Route path="/profile" element={<ProfilePage />} />
-				<Route
-					path="/write"
-					element={user ? <Write /> : <Navigate to="/login" />}
-				/>
-				<Route path="/post/:postId" element={<SinglePost />} />
-				<Route path="/edit" element={<ProfilePageEdit />} />
-				<Route
-					path="/postedit/:postId"
-					element={user ? <PostEdit /> : <Navigate to="/" />}
-				/>
-				<Route path="/settings" element={<Settings />} />
-				<Route path="*" element={<PageNotFound />} />
-			</Routes>
-			</div>
-
-			<Footer />
-		</BrowserRouter>
-			</div>
-	);
+        <Footer />
+      </BrowserRouter>
+    </div>
+  );
 };
 
 export default App;

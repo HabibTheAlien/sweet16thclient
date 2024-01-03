@@ -1,0 +1,29 @@
+.turingContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.data,
+.key {
+  resize: none;
+  padding: 7px;
+  font-size: 15px;
+  width: 500px;
+  margin: 5px 0px;
+}
+
+.btn {
+  padding: 10px;
+  background-color: slateblue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.output {
+  width: 500px;
+  height: fit-content;
+  color: blue;
+}
